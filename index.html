@@ -7,7 +7,8 @@
     *{
 	margin:0px;
 	padding:0px;
-	box-sizing:box-border;
+	box-sizing:border-box;
+	overflow:hidden;
     }
     #header{
 	text-align:center;
@@ -23,21 +24,50 @@
 	top:20vh;
 	left:20vw;
 	z-index:10000000;
-	background-color:#eeeeee
+	background-color:#eeeeeeaf;
+	padding:2vw;
+
     }
     #canvas{
-	position:absolute;
+	position:fixed;
 	width:100vw;
 	height:100vh;
 	z-index:-100;
     }
+    #dear{
+	font-size:5vh;
+    }
+    .pandas{
+	width:75px;
+	height:75px;
+    }
+    #pandac{
+	position:absolute;
+	top:50vh;
+    }
   </style>
 </head>
 <body><div id="text">
+    <p id="dear">Dear Daddy,</p>
     <h1 id="header">Happy Birthday</h1>
+<div id="pandac">
+  <img class="pandas" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngarts.com%2Ffiles%2F3%2FCute-Panda-PNG-Free-Download.png&f=1&nofb=1">
+  </div>
     </div>
   <canvas id="canvas"></canvas>
   <script>
+    var vwpx=window.outerWidth/100-2;
+    var txtw=vwpx*60;
+    var pandaw=75;
+    var padpx=vwpx*2;
+    var x=padpx;
+    while(x<txtw){
+	x+=pandaw;
+    var img = document.createElement("img");
+    img.src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngarts.com%2Ffiles%2F3%2FCute-Panda-PNG-Free-Download.png&f=1&nofb=1"
+    img.classList.add("pandas")
+    document.getElementById("pandac").append(img);
+    }
    window.onload = function() {
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
