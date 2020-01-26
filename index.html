@@ -57,12 +57,12 @@
   <script>
     var vwpx=window.outerWidth/100;
     var vhpx= window.outerHeight/100;
-    var txtw=vwpx*60;
+    var txtw=vwpx*(60-2);
     var pandaw=75;
-    var txth=vhpx*60;
-    document.getElementById("pandac").style.top=txth-pandaw-50+"px";
+    var txth=(vhpx*(60-6))-10;
+    document.getElementById("pandac").style.top=txth-pandaw+"px";
     var padpx=vwpx*2;
-    var x=padpx;
+    var x=padpx+pandaw;
     while(x<txtw){
 	x+=pandaw;
     var img = document.createElement("img");
