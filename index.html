@@ -55,10 +55,12 @@
     </div>
   <canvas id="canvas"></canvas>
   <script>
-    var vwpx=window.outerWidth/100-2;
+    var vwpx=window.outerWidth/100;
+    var vhpx= window.outerHeight/100;
     var txtw=vwpx*60;
     var pandaw=75;
-    document.getElementById("pandac").top=txtw-pandaw
+    var txth=vhpx*60;
+    document.getElementById("pandac").style.top=txth-pandaw-50+"px";
     var padpx=vwpx*2;
     var x=padpx;
     while(x<txtw){
